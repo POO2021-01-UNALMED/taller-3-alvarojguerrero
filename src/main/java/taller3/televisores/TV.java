@@ -6,7 +6,7 @@ public class TV {
 	private int canal;
 	private int precio;
 	private boolean estado;
-	private int volumen=1;
+	private int volumen;
 	private Control control;
 	public static int numTV;
 	
@@ -15,6 +15,7 @@ public class TV {
 		this.estado = estado;
 		canal =1;
 		precio=500;
+		volumen=1;
 		numTV++;
 	}
 
@@ -41,9 +42,7 @@ public class TV {
 	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
-	public boolean getEstado(){
-        return estado;
-    }
+	
 
 	public int getVolumen() {
 		return volumen;
@@ -69,6 +68,10 @@ public class TV {
         TV.numTV = numTV;
     }
 	
+	public boolean getEstado() {
+        return estado;
+    }
+	
 	public void turnOn() {
 		this.estado=true;
 		
@@ -78,35 +81,31 @@ public class TV {
 		
 	}
 	public void canalUp() {
-		if (this.estado == true){
+		if (estado == true && (canal>=1 && canal<=120)){
 			if(canal>=1 && canal<=120) {
 				this.canal++;
 			}
 		}
 	}
+	
 		
 	public void  canalDown() {
-		if (this.estado == true){
-			if(canal>=1 && canal<=120) {
+		if (estado == true && (canal>=1 && canal<=120)){
 				this.canal--;
 			}
 		}
-	}
+	
 	public void volumenUp() {
-		if (this.estado == true){
-			if(volumen>=1 && volumen<=7) {
+		if (estado == true && (volumen>=1 && volumen<=7)){
 				this.volumen++;
 			}
 		}
-	}
 		
 	public void  volumenDown() {
-		if (this.estado == true){
-			if(volumen>=1 && volumen<=7) {
+		if (estado == true && (volumen>=1 && volumen<=7)){
 				this.volumen--;
 			}
 		}
-	}
 	public void enlazar(Control control){
         this.control = control.tv.control;
     }
