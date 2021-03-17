@@ -3,11 +3,11 @@ package taller3.televisores;
 
 public class TV {
 	private Marca marca;
-	private int canal;
+	int canal;
 	private int precio;
-	private boolean estado;
-	private int volumen;
-	private Control control;
+	boolean estado;
+	int volumen;
+	Control control;
 	public static int numTV;
 	
 	public TV(Marca marca, boolean estado) {
@@ -29,10 +29,6 @@ public class TV {
 
 	public int getCanal() {
 		return canal;
-	}
-
-	public void setCanal(int canal) {
-		this.canal = canal;
 	}
 
 	public int getPrecio() {
@@ -80,16 +76,19 @@ public class TV {
 		 this.estado=false;
 		
 	}
+	
+	public void setCanal(int canal){
+        if(canal >= 1 && canal <= 120){
+            this.canal = canal;
+        }
+    }
 	public void canalUp() {
-		if (estado == true && (canal>=1 && canal<=120)){
-			if(canal>=1 && canal<=120) {
+		if (estado == true && (canal>=1 && canal<=120)){ 
 				this.canal++;
 			}
 		}
-	}
-	
 		
-	public void  canalDown() {
+	public void canalDown() {
 		if (estado == true && (canal>=1 && canal<=120)){
 				this.canal--;
 			}
