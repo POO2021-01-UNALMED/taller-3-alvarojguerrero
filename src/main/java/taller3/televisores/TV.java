@@ -41,6 +41,9 @@ public class TV {
 	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
+	public boolean getEstado(){
+        return estado;
+    }
 
 	public int getVolumen() {
 		return volumen;
@@ -104,4 +107,8 @@ public class TV {
 			}
 		}
 	}
+	public void enlazar(Control control){
+        this.control = control.tv.control;
+    }
 }
+
