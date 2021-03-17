@@ -19,9 +19,9 @@ public class Control {
             tv.canal --;
         }
     }
-    public void setCanal(int canal){
-        if(canal >= 1 && canal <= 120 && tv.estado){
-            tv.canal = canal;
+    public void setCanal(int canal1){
+        if(canal1 >= 1 && canal1 <= 120 && tv.estado){
+            tv.canal = canal1;
         }
     }
     public void volumenUp(){
